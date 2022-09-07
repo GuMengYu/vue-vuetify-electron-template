@@ -1,0 +1,78 @@
+{
+  "message": {
+    "hello": "你好 世界",
+    "pic_limit": "选择图片大小不能超过2M",
+    "something_wrong": "出错了, 可能操作过于频繁",
+    "reset_app": "重置应用",
+    "disclaimer": "免责声明",
+    "logout": "退出登录",
+    "phone_email": "手机号或邮箱",
+    "password": "密码",
+    "reset_msg": "重置应用状态，将会退出登录，所有设置恢复到安装时的状态",
+    "exit_tip": "关闭提示",
+    "exit_prompt": "询问",
+    "exit_min": "最小化到系统托盘",
+    "exit_direct": "直接退出",
+    "reminder": "不再提醒"
+  },
+  "main": {
+    "nav": {
+      "search": "搜索",
+      "home": "主页",
+      "about": "关于"
+    },
+    "simi": "相似推荐",
+    "setting": {
+      "language": "选择语言-改变将会立即生效",
+      "reset": "重置应用数据(包括缓存，用户登录信息)",
+       "exit": "点击窗口关闭按钮的行为..."
+    }
+  },
+  "common": {
+    "cancel": "取消",
+    "confirm": "确定",
+    "forward": "前进",
+    "backward": "后退",
+    "reload": "刷新",
+    "play": "播放",
+    "delete": "删除",
+    "open_search": "打开搜索",
+    "sign_in": "登录",
+    "sign_out": "登出",
+    "personal": "个人中心",
+    "search_type_1": "搜索",
+    "more": "显示更多",
+    "expand": "查看更多",
+    "collapse": "收起",
+    "translations": "翻译",
+    "not_support": "暂时不支持哟",
+    "language": "语言",
+    "zh-CN": "简体中文",
+    "en": "English",
+    "setting": "设置",
+    "theme": "主题",
+    "light": "浅色",
+    "dark": "深色",
+    "theme_color": "主题色",
+    "dark_theme": "深色主题",
+    "auto": "跟随系统",
+    "other": "其他",
+    "exitmode": "关闭主面板",
+    "usageSize": "缓存占用空间",
+    "title": "标题",
+    "open": "已开启 | 已关闭",
+    "shortcut": "快捷操作",
+    "disagree": "不同意",
+    "agree": "同意",
+    "unknown": "未知",
+    "upload": "上传"
+  },
+  "theme": {
+    "RedSandDunes": "红沙滩",
+    "GreenMountainTop": "绿色峰顶",
+    "OrangeDesert": "橙色沙漠",
+    "BlueMountains": "蓝色山峰",
+    "GreenRockyMountains": "落基山脉",
+    "Customize": "自定义"
+  }
+}
