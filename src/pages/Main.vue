@@ -1,0 +1,90 @@
+<template>
+  <v-app class="v-you" :class="{ 'is-desktop': isDesktop }">
+    <AppCC />
+    <app-nav v-if="smAndUp && navLeft" class="v-you-nav" />
+    <app-header v-if="!inDeepPage" class="v-you-header" />
+
+    <app-content id="v-you-content" class="v-you-content" />
+    <app-bottom-nav v-if="xs" />
+  </v-app>
+</template>
+
+<script setup lang="ts">
+import { storeToRefs } from 'pinia'
+import { useDisplay, useTheme } from 'vuetify'
+
+import useInForeground from '@/hooks/useInForeground'
+import { useCurrentTheme } from '@/hooks/useTheme'
+import { useSettingStore } from '@/store/setting'
+import is from '@/util/is'
+
+import AppBottomNav from './layout/BottomNav.vue'
+import AppCC from './layout/CC.vue'
+import AppHeader from './layout/Header.vue'
+import AppNav from './layout/Navbar.vue'
+import AppContent from './layout/View.vue'
+const { themeName } = useCurrentTheme()
+const { navLeft } = storeToRefs(useSettingStore())
+const display = useDisplay()
+const { xs, smAndUp } = display
+const theme = useTheme()
+watchEffect(() => {
+  theme.global.name.value = themeName.value
+})
+const isDesktop = computed(() => {
+  return is.electron()
+})
+const { isActive: inDeepPage } = useInForeground([])
+</script>
+<style lang="scss">
+$cubic-bezier: cubic-bezier(0.55, -0.01, 0, 1.03);
+$transition-time: 350ms;
+.v-you-nav {
+  border-inline-end-width: 0;
+  transition-property: width;
+  transition-duration: $transition-time;
+  transition-timing-function: $cubic-bezier;
+  .v-navigation-drawer__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .content-warp {
+    display: flex;
+    flex-direction: column;
+    .list-content {
+      flex: initial;
+      transition: flex $transition-time $cubic-bezier;
+      //.v-list-item {
+      //  &:hover .v-icon {
+      //    animation: bounce 1s;
+      //  }
+      //}
+    }
+    &.rail-nav {
+      .list-content {
+        flex: auto;
+      }
+    }
+  }
+}
+.v-you-content {
+  transition: padding $transition-time $cubic-bezier;
+}
+.v-you-header {
+  transition-property: left, width;
+  transition-duration: $transition-time;
+  transition-timing-function: $cubic-bezier;
+}
+.is-desktop {
+  user-select: none;
+}
+.v-you {
+  border-radius: 28px;
+  border: 8px solid rgba(var(--v-theme-primary), 0.2);
+  transform: scale(1);
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  //width: 100vw;
+}
+</style>

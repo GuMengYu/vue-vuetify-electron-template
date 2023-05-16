@@ -3,12 +3,13 @@
  */
 {
   "appId": "com.appname.app",
-  "copyright": 'Copyright © gumengyu 2022', //版权信息
+  "copyright": 'Copyright © gumengyu 2023', //版权信息
   "asar": true,
   "directories": {
     "output": "release/${version}"
   },
   "files": [
+    "dist-electron",
     "dist"
   ],
   "mac": {
@@ -16,10 +17,11 @@
     "target": [
       {
         "target":"dmg",
-        "arch": ["x64", "arm64"]
+        "arch": ["x64", "arm64", "universal"]
       }
     ],
     "darkModeSupport": true,
+    "category": "public.app-category.other"
   },
   "win": {
     "target": [
@@ -44,6 +46,7 @@
       "pacman",
       "tar.xz",
     ],
+    "category": "Other"
   },
   "nsis": {
     "oneClick": false,

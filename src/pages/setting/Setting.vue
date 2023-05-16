@@ -1,0 +1,18 @@
+<template>
+  <section class="d-flex justify-center">
+    <div style="max-width: 960px" class="d-flex flex-column gap-4 flex-fill">
+      <app-settings-theme />
+      <app-settings-other />
+      <app-settings-reset />
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+import AppSettingsOther from './components/Other.vue'
+import AppSettingsReset from './components/Reset.vue'
+import AppSettingsTheme from './components/Theme.vue'
+const { t } = useI18n()
+</script>
